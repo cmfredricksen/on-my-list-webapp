@@ -8,7 +8,7 @@ def add_todo():
     todo = st.session_state["new_todo"]
     todos.append(todo + "\n")
     functions.write_todos(todos)
-    st.session_state["new_todo"] = placeholder_text
+    st.session_state["new_todo"] = ""
 
 
 st.title("On my list...")
@@ -23,7 +23,7 @@ for index, todo in enumerate(todos):
         st.experimental_rerun()
         
 
-st.text_input(label="Add a todo:", placeholder=placeholder_text, label_visibility="hidden", on_change=add_todo, key="new_todo")
+st.text_input(label="Add a todo:", placeholder="Add a todo...", label_visibility="hidden", on_change=add_todo, key="new_todo")
 
 
 
